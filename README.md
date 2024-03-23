@@ -4,18 +4,6 @@
 
 **Disclaimer**: InStore Net Promoted Score is a Binary Classification project, based on this [Kaggle Competition](https://www.kaggle.com/competitions/instyle-nps). The context, company and business problem are ficticial.
 
-# Table of Contents
-
-* [1. Business Scenario](#1-business-scenario)
-* [2. Solution Strategy](#2-solution-strategy)
-* [3. Data Filtering](#3-data-filtering)
-* [4. Hypothesis and Insights](#4-hyphotesis-and-insights)
-* [5. Machine Learning Models](#5-machine-learning-models)
-* [6. Machine Learning Performance](#6-machine-learning-performance)
-* [7. Business Results](#7-business-results)
-* [8. Next Steps](#8-next-steps)
-* [9. Technologies](#9-technologies)
-
 # 1. BUSINESS SCENARIO
 
 ## 1.1 - InStyle and their Business Problem
@@ -96,7 +84,7 @@ Publish the model in a cloud environment so that other people or services can us
 </p>
 
 
-# 4. Hypothesis and Insights
+# 3. Hypothesis and Insights
 
 **1 - As the dressing room score increases, the volume of dissatisfied customers decreases.**
 ![image](reports/figures/h1.png)
@@ -115,7 +103,7 @@ Publish the model in a cloud environment so that other people or services can us
 
 
 
-# 5. Data Modelling
+# 4. Data Modelling
 <p style="text-align: justify"> In this phase, we worked on feature engineering, encoding, and rescaling techniques.
 
 On feature engineering, we created two new features:
@@ -130,7 +118,7 @@ On encoding and rescaling, we worked with:
 * **Robust Scaler:** Rescaling the numerical features is applied to features that follow a normal distribution and contain outliers.
 </p>
 
-# 6. Machine Learning Models
+# 5. Machine Learning Models
 
 **The aim of the project is to identify Neutral or Dissatisfied Customers**
 On this step, I will use the datasets as per below:
@@ -174,7 +162,7 @@ Just for better understanding, the dataset used to evaluate the models contains 
 
 I consider this a great result for the project, and it will certainly help to improve the satisfaction level of In Style customers.
 
-# 8. Technologies
+# 6. Technologies
 
 [![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)](https://www.python.org/)
 [![Jupyter Notebook](https://img.shields.io/badge/jupyter-%23FA0F00.svg?style=for-the-badge&logo=jupyter&logoColor=white)](https://jupyter.org/)
