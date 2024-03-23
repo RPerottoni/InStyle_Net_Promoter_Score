@@ -16,7 +16,7 @@
 * [8. Next Steps](#8-next-steps)
 * [9. Technologies](#9-technologies)
 
-# 1. Business Scenario
+# 1. BUSINESS SCENARIO
 
 ## 1.1 - InStyle and their Business Problem
 <p style="text-align: justify"> InStyle is one of the largest clothing stores in the United States facing customer experience issues.
@@ -35,22 +35,16 @@ One of the War Room's first emergency actions was to provide personal assistance
 
 The Data Scientists of the War Room were tasked with training an algorithm to classify customers from a spreadsheet as "Satisfied" or "Neutral/Unsatisfied," predicting which customers might become Unsatisfied and, therefore, taking swift action to understand the reason for dissatisfaction and reverse the customer's situation. </p>
 
-# 2. Solution Strategy
+# 2. SOLUTION STRATEGY
 
 <p style="text-align: justify"> The solution follows the CRISP-DM (Cross-Industry Standard Process for Data Mining), which is a cyclic method of development. At the end of the first cycle, the team will have a first version end-to-end of this solution, allowing them to achieve good results faster, identify and address potential problems effectively. </p>
 
 ![image](reports/figures//crispds.jpg)
 
-**Business Problem and Business Understanding:** 
-<p> É essencial compreender completamente o problema de negócio que está sendo abordado. Isso envolve conversas com as partes interessadas para obter uma visão clara dos desafios e das metas.
-Estabelecer objetivos de forma mensurável. 
-Certificar-se de que a solução proposta está alinhada com os objetivos mais amplos da organização. 
-Identificar o público-alvo da solução e entender suas necessidades e expectativas. Isso inclui 
-Avaliar a viabilidade técnica da solução proposta. 
-Garantir que todas as informações relevantes sobre o problema de negócio estejam documentadas de forma clara e acessível a toda a equipe envolvida no projeto.
-Manter uma comunicação aberta e contínua com as partes interessadas ao longo do processo. </p>
+### **Business Problem and Business Understanding:** 
+<p> It is essential to fully understand the business problem being addressed. This involves engaging in conversations with stakeholders to gain a clear insight into the challenges and goals. Establish measurable objectives. Ensure that the proposed solution is aligned with the broader goals of the organization. Identify the target audience of the solution and understand their needs and expectations. This includes assessing the technical feasibility of the proposed solution. Ensure that all relevant information about the business problem is documented clearly and accessible to the entire team involved in the project. Maintain open and ongoing communication with stakeholders throughout the process. </p>
 
-### **1. Data Extraction and Data Cleaning:**
+### **Data Extraction and Data Cleaning:**
 <p>
 Collecting, uploading, accessing the data to be used to solve the business questions. And runing an initial check on the datas to identify:
 
@@ -62,7 +56,7 @@ Collecting, uploading, accessing the data to be used to solve the business quest
 
 </p>
 
-### **2. Exploratory Data Analysis:** 
+### **Exploratory Data Analysis:** 
 <p>On this phase tree types of analysis are made:
 
 * **Univariate Analysis:** To understand the distribution of each feature, if there are outliers, if it is a normal distribution, etc.
@@ -70,7 +64,7 @@ Collecting, uploading, accessing the data to be used to solve the business quest
 * **Multivariate Analysis:** Correlation analysis among all features.
 </p>
 
-### **3. Data Modeling and Feature Engineering:**
+### **Data Modeling and Feature Engineering:**
 <p>
 Feature engineering consists in derivate/modify (new) features from the existing ones, aiming to find something that can help to better explain the phenomenon of study.
 
@@ -84,21 +78,23 @@ Modeling consists in work with the datas aiming to adjust them according the mac
 
 </p>
 
-### **4. Machine Learning Modelling:**
+### **Machine Learning Modelling:**
 <p>
 Model Selection: Choose appropriate machine learning algorithms based on the nature of the problem and data.
 Training and Evaluation: Train models on the training set and evaluate their performance using the testing set.
 Hyperparameter Tuning: Fine-tune model hyperparameters to optimize performance. This involves adjusting parameters that are not learned from the training data, such as learning rates or regularization terms.
 </p>
 
-### **5. Evaluation**
+### **Evaluation**
 <p>
 The evaluation phase involves analyzing the performance of the machine learning model to determine whether it meets the established criteria and is satisfactory for further advancement in the project. During this step, the chosen performance metrics are compared with the actual process or results.
-
 </p>
 
-### **6. Deployment** 
-Publish the model in a cloud environment so that other people or services can use the results to improve the business decision.
+### **Deployment** 
+<p>
+Publish the model in a cloud environment so that other people or services can use the results to improve and make business decisions.
+</p>
+
 
 # 4. Hypothesis and Insights
 
@@ -135,44 +131,50 @@ On encoding and rescaling, we worked with:
 </p>
 
 # 6. Machine Learning Models
-On this step, as we are working on a binary classification problem, we selected two boosting algorithms for classification. They are:
 
-XGBoost Classifier (Extreme Boosting Classifier) and LGBM Classifier ( Light Gradient Boosting Classifier). The way that they work are very similar and both are powerful and light machine learning algorithms to be deployed to production.
+**The aim of the project is to identify Neutral or Dissatisfied Customers**
+On this step, I will use the datasets as per below:
+- X, y: to train and evaluate the machine learning models using cross validation technique;
+- train_x, train_y: to train the machine learning models;
+- val_x, val_y: to evaluate the trained machine learning models;
+- test_x, test_y: to evaluate the machine learning model, after hyperparameteres fine tuning;
 
-The metric selected for this business problem is a precision_micro, which is a variation of the precision metric.This metric is suitable for situations where you want to evaluate the overall model performance without considering specific classes.
 
-Before to start with the algorithms, tree new datasets were created from the initial one:
+The algorithms will be evaluated calculating the micro-precision metric;
+- Precision micro: represents the ratio of correct classifications for a positive class in relation to the total positive instances that the algorithm predicted.
 
-* **train:** Containing aroun 80% of the total data and it will be used to train the algorithm.
-* **validation:** Containing around 10% of the total data and it will be used to select the best parameters (fine tuning)
-* **test:** Containing around 10% of the total data and it will be used to evaluate the selected model after tuning.
+I have started with some models and the performance of them, without fine tuning, can be seem below:
 
-The steps to evaluate the machine learning algorithms are:
-* Model Definition
-* Model Trainind
-* Model Prediction
-* Evaluation
+The performance for the machine learning are as per below:
 
-The performance for both algorithms trained on train dataset is described below:
+| ML Model                | Precision_micro cross_validation|Precision_micro Train, Val, Test Split |
+|:------------------------|:--------------------------------|---------------------------------------|
+| XGB                     | 0.9643                          |0.9627                                 |
+| LGBM                    | 0.9651                          |0.9634                                 |
+| Logistic Regression     | 0.5666                          |0.5696                                 |
+| Randon Forest           | 0.9643                          |0.9630                                 |
 
-| ML Model                | Precision_micro         
-|:------------------------|:------------------------
-| LGBM                    | 0.9638   
-| XGB                     | 0.9646
 
-From these options, LGBM was selected for use in production due to its superior performance and faster execution compared to XGBoost. So, a Bayesian search technique was used for hyperparameter tuning, and the algorithm performance after fine tuning can be checked below:
+The algoriths XGB, LGBM and Randon Forest have a similar performance, so I decided to further advance with LGBM and XGB because they are lighter and quicker to evaluate in relation to the Randon Forest.
 
-| ML Model                | Precision_micro_      
-|:------------------------|:------------------------
-| LGBM                    | 0.9678     
+I have fine tuned the selected models and the performance could be checked at the table below:
 
-## 7.2 - Business Problem Solution
+| ML Model                | Precision_micro cross_validation|Precision_micro Train, Val, Test Split |
+|:------------------------|:--------------------------------|---------------------------------------|
+| XGB                     | 0.9649                          |0.9634                                 |
+| LGBM                    | 0.9651                          |0.9645                                 |
 
-<p style="text-align: justify"></p>
+The difference when comparing the chosen metric isn't significant. However, when comparing the predictions using the confusion matrix, there is a slightly noticeable difference. As the LGBM has shown better performance, I have decided to continue the project with this algorithm.
 
-![image](reports/figures/google_sheet_automation.gif)
+Just for better understanding, the dataset used to evaluate the models contains 13,248 records, with 7,415 dissatisfied customers and 5,833 satisfied customers. The LGBM was able to identify 7,293 dissatisfied customers, making 122 incorrect predictions, while XGB was able to identify 7,269, making 146 incorrect predictions.
 
-# 9. Technologies
+| ![XGB Confusion Matrix](reports/figures/xgb.png) | ![LGBM Confusion Matrix](reports/figures/lgbm.png) |
+|:--:|:--:|
+| **Figura 1:** XGB Confusion Matrix. | **Figura 2:** LGBM Confusion Matrix. |
+
+I consider this a great result for the project, and it will certainly help to improve the satisfaction level of In Style customers.
+
+# 8. Technologies
 
 [![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)](https://www.python.org/)
 [![Jupyter Notebook](https://img.shields.io/badge/jupyter-%23FA0F00.svg?style=for-the-badge&logo=jupyter&logoColor=white)](https://jupyter.org/)
@@ -182,6 +184,8 @@ From these options, LGBM was selected for use in production due to its superior 
 [![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)](https://git-scm.com/)
 [![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
 [![Render](https://img.shields.io/badge/-Render-%23430098.svg?style=for-the-badge&logo=Render&logoColor=white)](https://www.render.com/)
+
+## Please refer to the complete project to follow the step-by-step process and my reasoning behind its development. You will find the Jupyter notebook within the 'notebook' folder..
 
 # AUTHOR
 Ricardo Perottoni
