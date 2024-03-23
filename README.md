@@ -173,7 +173,7 @@ I consider this a great result for the project, and it will certainly help to im
 [![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
 [![Render](https://img.shields.io/badge/-Render-%23430098.svg?style=for-the-badge&logo=Render&logoColor=white)](https://www.render.com/)
 
-## Please refer to the complete project to follow the step-by-step process and my reasoning behind its development. You will find the Jupyter notebook within the 'notebook' folder..
+## Please refer to the complete project to follow the step-by-step process and my reasoning behind its development. You will find the Jupyter notebook within the 'notebook' folder.
 
 # AUTHOR
 ### Ricardo Perottoni
