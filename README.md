@@ -176,6 +176,5 @@ I consider this a great result for the project, and it will certainly help to im
 ## Please refer to the complete project to follow the step-by-step process and my reasoning behind its development. You will find the Jupyter notebook within the 'notebook' folder..
 
 # AUTHOR
-Ricardo Perottoni
+### Ricardo Perottoni
 
-###### All Rights Reserved - Comunidade DS 2022
